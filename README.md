@@ -10,7 +10,7 @@ For full documentation, please see that project's [README.md](https://github.com
 However, to use [sbt-ethereum](https://github.com/swaldman/sbt-ethereum) directly, it is necessary to go through
 the ceremony of setting up a project directory and a synced ethereum node. This project takes care of that for you.
 
-** Tab completion is your friend.** If you try to type everything in, you will find this an annoyingly verbose
+**Tab completion is your friend.** If you try to type everything in, you will find this an annoyingly verbose
 command line interface. `eth-command-line` tasks support <tab> completion *extensively*. **When in doubt, just hit <tab>
 a few times in quick succession, and maybe things will get clearer.**
 
