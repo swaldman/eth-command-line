@@ -1,8 +1,8 @@
 # eth-command-line
 
-## An instant-gratification command line for interacting with ethereum smart-contracts and accounts
+### An instant-gratification command line for interacting with ethereum smart-contracts and accounts ###
 
-### Introduction
+## Introduction
 
 `eth-command-line` is just a thin wrapper around [sbt-ethereum](https://github.com/swaldman/sbt-ethereum).
 For full documentation, please see that project's [README.md](https://github.com/swaldman/sbt-ethereum/blob/master/README.md) file.
@@ -16,7 +16,7 @@ If you try to type everything in, you will find this to be an annoyingly verbose
 command line interface. `eth-command-line` tasks support <tab> completion *extensively*. **When in doubt, just hit <tab>
 a few times in quick succession, and maybe things will get clearer.**
 
-### Quick-Start
+## Quick-Start
 
 1. Clone or download this project
 2. In the top-level project directory, make sure that the shell script `eth-command-line` has
@@ -53,7 +53,7 @@ a few times in quick succession, and maybe things will get clearer.**
    ...but using your own Ethereum address of course!
    
 
-#### Quick Example: Import a contract ABI and call a constant method of a smart contract to check its state
+### Quick Example: Import a contract ABI and call a constant method of a smart contract to check its state
 
 ```
 eth-command-line ~> ethMemorizeAbi
@@ -70,10 +70,18 @@ eth-command-line ~> ethCallEphemeral 0x5c9a9820d404481000c1d85fb620852e105a1904 
 [success] Total time: 1 s, completed Dec 30, 2016 7:41:54 AM
 ```
 
-### Links to documentation of common operations
+## Links to documentation of common operations
 
 * [Sending ether](https://github.com/swaldman/sbt-ethereum/blob/master/README.md#sending-ether)
 * [Interacting with deployed smart contracts](https://github.com/swaldman/sbt-ethereum/blob/master/README.md#interacting-with-deployed-smart-contracts)
 * [Generating accounts and wallets](https://github.com/swaldman/sbt-ethereum/blob/master/README.md#generating-accounts-and-wallets)
 * [Managing the sbt-ethereum repository](https://github.com/swaldman/sbt-ethereum/blob/master/README.md#the-sbt-ethereum-repository)
 
+## Developing your own smart contracts
+
+If you are working with `eth-command-line`, you have downloaded a capable environment for developing ethereum smart contracts.
+However, it's best to create a separate project directory for your work. Please see the [sbt-ethereum](https://github.com/swaldman/sbt-ethereum/blob/master/README.md) docs.
+
+**All of your wallets and imported contract ABIs will be available in the new project. They are kept in a central repository by `sbt-ethereum`.** When you deploy
+the smart contracts you develop, their ABIs (and other meta information) will be added to the repository database, so you can build up a permanent knowledge base
+about the contracts you work with over time.
