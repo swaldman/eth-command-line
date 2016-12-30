@@ -40,6 +40,7 @@ a few times in quick succession, and maybe things will get clearer.**
    ```
    You can also import existing `geth` wallets into the `sbt-ethereum` repository directory.
    See the [sbt-ethereum docs](https://github.com/swaldman/sbt-ethereum/blob/master/README.md).
+
    **Be sure to back up your `sbt-ethereum` repository directory to avoid losing your wallets
    and accounts!**
 6. Once you have a generated or imported a wallet (and transferred some Eth to its account),
