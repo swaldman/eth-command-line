@@ -82,6 +82,7 @@ eth-command-line ~> ethCallEphemeral 0x5c9a9820d404481000c1d85fb620852e105a1904 
 If you are working with `eth-command-line`, you have downloaded a capable environment for developing ethereum smart contracts.
 However, it's best to create a separate project directory for your work. Please see the [sbt-ethereum](https://github.com/swaldman/sbt-ethereum/blob/master/README.md) docs.
 
-**All of your wallets and imported contract ABIs will be available in the new project. They are kept in a central repository by `sbt-ethereum`.** When you deploy
-the smart contracts you develop, their ABIs (and other meta information) will be added to the repository database, so you can build up a permanent knowledge base
-about the contracts you work with over time.
+**All of your wallets and imported contract ABIs will be available in the new project. They are kept in a central repository by `sbt-ethereum`.**
+
+When you deploy the smart contracts you develop, their ABIs (and other meta information) will be added to the repository database, so you can
+build up a permanent knowledge base about the contracts you work with over time.
