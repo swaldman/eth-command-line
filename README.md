@@ -50,7 +50,7 @@ a few times in quick succession, and maybe things will get clearer.**
    ...but using your own Ethereum address of course!
    
 
-#### Quick Example: Calling a constant method of a smart contract to check its state
+#### Quick Example: Import a contract ABI and call a constant method of a smart contract to check its state
 
 ```
 eth-command-line ~> ethMemorizeAbi
