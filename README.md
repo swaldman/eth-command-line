@@ -70,7 +70,7 @@ eth-command-line ~> ethCallEphemeral 0x5c9a9820d404481000c1d85fb620852e105a1904 
 ### Links to documentation of common operations
 
 * [Sending ether](https://github.com/swaldman/sbt-ethereum/blob/master/README.md#sending-ether)
-* [Interacting with deployed smart contracts](https://github.com/swaldman/sbt-ethereum/blob/master/README.md#interacting-with-deployed-smart-contracts
+* [Interacting with deployed smart contracts](https://github.com/swaldman/sbt-ethereum/blob/master/README.md#interacting-with-deployed-smart-contracts)
 * [Generating accounts and wallets](https://github.com/swaldman/sbt-ethereum/blob/master/README.md#generating-accounts-and-wallets)
 * [Managing the sbt-ethereum repository](https://github.com/swaldman/sbt-ethereum/blob/master/README.md#the-sbt-ethereum-repository)
 
