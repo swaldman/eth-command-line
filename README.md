@@ -16,6 +16,11 @@ If you try to type everything in, you will find this to be an annoyingly verbose
 command line interface. `eth-command-line` tasks support <tab> completion *extensively*. **When in doubt, just hit <tab>
 a few times in quick succession, and maybe things will get clearer.**
 
+In order for the instant gratification thing to work, this application is preconfigured to interact with a public
+Ethereum node at `http://ethjsonrpc.mchange.com:8545/` When you are ready to sync the blockchain and run your own node,
+you should probably graduate to using [sbt-ethereum](https://github.com/swaldman/sbt-ethereum) directly. **No guarantees are
+made about how long our Ethereum node will be exposed for public use!** But for now, come play.
+
 ## Quick-Start
 
 1. Clone or download this project
