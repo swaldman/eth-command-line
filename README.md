@@ -7,14 +7,8 @@
 `eth-command-line` is just a thin wrapper around [sbt-ethereum](https://github.com/swaldman/sbt-ethereum).
 For full documentation, please see that project's [README.md](https://github.com/swaldman/sbt-ethereum/blob/master/README.md) file.
 
-However, to use [sbt-ethereum](https://github.com/swaldman/sbt-ethereum) directly, it is necessary to go through
-the ceremony of setting up a project directory and a synced ethereum node. This project takes care of that for you.
-
-**Tab completion is your friend.**
-
-If you try to type everything in, you will find this to be an annoyingly verbose
-command line interface. `eth-command-line` tasks support <tab> completion *extensively*. **When in doubt, just hit <tab>
-a few times in quick succession, and maybe things will get clearer.**
+Unfortunately, to use [sbt-ethereum](https://github.com/swaldman/sbt-ethereum) directly, you have to go through
+the ceremony of setting up a project directory and run a synced ethereum node. This project takes care of that for you.
 
 In order for the instant gratification thing to work, this application is preconfigured to interact with a public
 Ethereum node at `http://ethjsonrpc.mchange.com:8545/` When you are ready to sync the blockchain and run your own node,
@@ -74,6 +68,12 @@ eth-command-line ~> ethCallEphemeral 0x5c9a9820d404481000c1d85fb620852e105a1904 
 [info]    + Result 1 of type 'string' is "Hello, world!"
 [success] Total time: 1 s, completed Dec 30, 2016 7:41:54 AM
 ```
+
+## Tab completion is your friend.
+
+If you try to type everything in, you will find this to be an annoyingly verbose
+command line interface. `eth-command-line` tasks support <tab> completion *extensively*. **When in doubt, just hit <tab>
+a few times in quick succession, and maybe things will get clearer.**
 
 ## Links to documentation of common operations
 
