@@ -2,18 +2,15 @@
 
 ### An instant-gratification command line for interacting with ethereum smart-contracts and accounts ###
 
-## Introduction
+## Prerequisites
 
-`eth-command-line` is just a thin wrapper around [sbt-ethereum](https://github.com/swaldman/sbt-ethereum).
-For full documentation, please see that project's [README.md](https://github.com/swaldman/sbt-ethereum/blob/master/README.md) file.
+You need a Java runtime environment installed on your machine. If you don't
+already have one, you can download a [JRE](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
+(or a full [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
+from Oracle.
 
-Unfortunately, to use [sbt-ethereum](https://github.com/swaldman/sbt-ethereum) directly, you have to go through
-the ceremony of setting up a project directory and run a synced ethereum node. This project takes care of that for you.
+`eth-command-line` has been developed under Java 8, but will probably work under other Java versions.
 
-In order for the instant gratification thing to work, this application is preconfigured to interact with a public
-Ethereum node at `http://ethjsonrpc.mchange.com:8545/` When you are ready to sync the blockchain and run your own node,
-you should probably graduate to using [sbt-ethereum](https://github.com/swaldman/sbt-ethereum) directly. **No guarantees are
-made about how long our Ethereum node will be exposed for public use!** But for now, come play.
 
 ## Quick-Start
 
@@ -51,6 +48,19 @@ made about how long our Ethereum node will be exposed for public use!** But for 
    ```
    ...but using your own Ethereum address of course!
    
+
+## Introduction
+
+`eth-command-line` is just a thin wrapper around [sbt-ethereum](https://github.com/swaldman/sbt-ethereum).
+For full documentation, please see that project's [README.md](https://github.com/swaldman/sbt-ethereum/blob/master/README.md) file.
+
+To use [sbt-ethereum](https://github.com/swaldman/sbt-ethereum) directly, you have to go through
+the ceremony of setting up a project directory and run a synced ethereum node. This project takes care of that for you.
+
+In order for the instant gratification thing to work, this application is preconfigured to interact with a public
+Ethereum node at `http://ethjsonrpc.mchange.com:8545/` When you are ready to sync the blockchain and run your own node,
+you should probably graduate to using [sbt-ethereum](https://github.com/swaldman/sbt-ethereum) directly. **No guarantees are
+made about how long our Ethereum node will be exposed for public use!** But for now, come play.
 
 ### Quick Example: Import a contract ABI and call a constant method of a smart contract to check its state
 
