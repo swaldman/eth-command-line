@@ -1,8 +1,8 @@
 # The launcher shell script 'eth-command-line' is taken almost entirely from
 #
-#    https://github.com/paulp/sbt-extras/blob/4ad1b8a325f75c1a66f3fd100635da5eb28d9c91/sbt
+#    https://github.com/paulp/sbt-extras/blob/715a3a8ba9bf16796eee0b034143acb4594c1d2d/sbt
 #    
-#      (C) 2016, Paul Phillips. All Rights Reserved.
+#      (C) 2018, Paul Phillips. All Rights Reserved.
 #
 #    and is distributed here under its original (BSD) license:
 #
@@ -33,7 +33,7 @@
 #
 # All other work in this distribution, and derivations of the launcher, are
 #
-#   (C) 2016 Machinery For Change, Inc. All Rights Reserved.
+#   (C) 2018 Machinery For Change, Inc. All Rights Reserved.
 #
 # and distributed under the same BSD licence, reproduced redundantly below.
 #

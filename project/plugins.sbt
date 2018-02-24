@@ -1,5 +1,5 @@
 // only necessary while using a SNAPSHOT version of sbt-ethereum
 resolvers += ("snapshots" at "https://oss.sonatype.org/content/repositories/snapshots")
 
-addSbtPlugin("com.mchange" % "sbt-ethereum" % "0.0.2-SNAPSHOT" changing())
-addSbtPlugin("com.scalapenos" % "sbt-prompt" % "1.0.0")
+addSbtPlugin("com.mchange" % "sbt-ethereum" % "0.1.0-SNAPSHOT" changing())
+

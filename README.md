@@ -11,7 +11,6 @@ from Oracle.
 
 `eth-command-line` has been developed under Java 8, but will probably work under other Java versions.
 
-
 ## Quick-Start
 
 1. Clone or download this project
@@ -19,31 +18,40 @@ from Oracle.
    execute permissions. (If not, on a Unix-like system, type `chmod +x ./eth-command-line`)
 3. Execute the shell script `eth-command-line`. The first time you do this, a whole bunch of
    downloads will likely be triggered
-4. At the `eth-command-line ~> ` prompt, begin typing ethereum-related command. To see a list
+4. At the prompt, you can begin typing ethereum-related command. To see a list
    of all commands, type `eth<tab>`. To see a description of all commands, type `tasks -V eth`
-5. For operations that require the payment of Ether, such as sending ether (`ethSendEther`) or
-   invoking state-changing smart-contract methods (`ethInvoke`), you will need to define the
+
+   _Note: `sbt-ethereum` commands are really verbose! They are not intended to be typed. Use the <tab> key, Luke!
+   For example, to enter `ethKeystoreWalletV3Create` (yuk, right?), just type `et<tab>K<tab>W<tab>C<tab>`. 
+   Another way of visualizing this is **et**h**K**eystore**W**alletV3**C**reate. Only the keys in bold
+   need to be typed, the rest get taken care of by `<tab>`. `sbt-ethereum` tries very hard to require
+   very few non-`<tab>` keypresses, usually just one capital letter takes you down a level of its hierarchically
+   organized commands._
+   
+
+5. For operations that require the payment of Ether, such as sending ether (`ethTransactionSend`) or
+   invoking state-changing smart-contract methods (`ethTransactionInvoke`), you will need to define the
    ethereum address from which the operation will originate. You can create a new address using
-   `ethGenWalletV3` command.
+   `ethKeystoreWalletV3Create` command.
    ```
-   eth-command-line ~> ethGenWalletV3
-   [info] Generated keypair for address '0xc33071ead8753b04e0ee108cc168f2b22f93525d'
+   sbt:eth-command-line> ethKeystoreWalletV3Create
+   [info] Generated keypair for address '0xe10280702f233573b2dca5a81bda8dd3a0867fcc'
    [info] Generating V3 wallet, alogorithm=scrypt, n=262144, r=8, p=1, dklen=32
    Enter passphrase for new wallet: *******************
    Please retype to confirm: *******************
-   [success] Total time: 31 s, completed Dec 30, 2016 7:53:11 AM
+   [success] Total time: 30 s, completed Feb 23, 2018 6:50:33 PM
 
    ```
    You can also import existing `geth` wallets into the `sbt-ethereum` repository directory.
    See the [sbt-ethereum docs](https://github.com/swaldman/sbt-ethereum/blob/master/README.md).
 
-   **Be sure to back up your `sbt-ethereum` repository directory to avoid losing your wallets
-   and accounts!**
-6. Once you have a generated or imported a wallet (and transferred some Eth to its account),
-   tell `eth-command-line` to use that account for fund transfers or method invocations by
-   calling the following command...
+   **Be sure to back up your `sbt-ethereum` repository directory to avoid losing your wallets and accounts!**
+
+6. Once you have a generated or imported a wallet (and transferred some ETH to its account),
+   you can set it as the default account for fund transfers or method invocations by setting
+   a special alias, 'defaultSender', using the following command...
    ```
-   eth-command-line ~> set ethAddress := "0xc33071ead8753b04e0ee108cc168f2b22f93525d"
+   sbt:eth-command-line> ethAddressAliasSet defaultSender 0xe10280702f233573b2dca5a81bda8dd3a0867fcc
 
    ```
    ...but using your own Ethereum address of course!
@@ -65,18 +73,15 @@ made about how long our Ethereum node will be exposed for public use!** But for 
 ### Quick Example: Import a contract ABI and call a constant method of a smart contract to check its state
 
 ```
-eth-command-line ~> ethMemorizeAbi
-Contract address in hex: 0x5c9a9820d404481000c1d85fb620852e105a1904
-Contract ABI: [{"name":"sayHello","inputs":[],"outputs":[{"name":"","type":"string"}],"constant":true,"type":"function"}]
+sbt:eth-command-line> ethContractAbiMemorize
+Contract address in hex: 0x57d0dfa84161e565c9f9ba4aab24d6b22654cca1
+Contract ABI: [{"name":"sayHello","inputs":[],"outputs":[{"name":"","type":"string"}],"constant":true,"payable":false,"stateMutability":"view","type":"function"}]
 [info] ABI is now known for the contract at address 5c9a9820d404481000c1d85fb620852e105a1904
 [success] Total time: 37 s, completed Dec 29, 2016 9:33:13 AM
-eth-command-line ~> ethCallEphemeral 0x5c9a9820d404481000c1d85fb620852e105a1904 sayHello
-[info] Call data for function call: ef5fb05b
-[info] Gas estimated for function call: 26259
-[info] Raw result of call to function 'sayHello': 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000d48656c6c6f2c20776f726c642100000000000000000000000000000000000000
+sbt:eth-command-line> ethTransactionView 0x57d0dfa84161e565c9f9ba4aab24d6b22654cca1 sayHello
 [info] The function 'sayHello' yields 1 result.
-[info]    + Result 1 of type 'string' is "Hello, world!"
-[success] Total time: 1 s, completed Dec 30, 2016 7:41:54 AM
+[info]  + Result 1 of type 'string' is "Hello, world!!!"
+[success] Total time: 1 s, completed Feb 23, 2018 6:59:28 PM
 ```
 
 ## Tab completion is your friend.
