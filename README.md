@@ -23,7 +23,7 @@ from Oracle.
 
    _Note: `sbt-ethereum` commands are really verbose! They are not intended to be typed. Use the <tab> key, Luke!
    For example, to enter `ethKeystoreWalletV3Create` (yuk, right?), just type `et<tab>K<tab>W<tab>C<tab>`. 
-   Another way of visualizing this is **et**h**K**eystore**W**alletV3**C**reate. Only the keys in bold
+   Another way of visualizing this is_ **et**h**K**eystore**W**alletV3**C**reate. _Only the keys in bold
    need to be typed, the rest get taken care of by `<tab>`. `sbt-ethereum` tries very hard to require
    very few non-`<tab>` keypresses, usually just one capital letter takes you down a level of its hierarchically
    organized commands._
