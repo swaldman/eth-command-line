@@ -29,7 +29,7 @@ from Oracle.
    organized commands._
    
 
-5. For operations that require the payment of Ether, such as sending ether (`ethTransactionSend`) or
+5. For operations that require the payment of Ether, such as sending ether (`ethTransactionEtherSend`) or
    invoking state-changing smart-contract methods (`ethTransactionInvoke`), you will need to define the
    ethereum address from which the operation will originate. You can create a new address using
    `ethKeystoreWalletV3Create` command.
@@ -47,36 +47,28 @@ from Oracle.
 
    **Be sure to back up your `sbt-ethereum` repository directory to avoid losing your wallets and accounts!**
 
-6. Once you have a generated or imported a wallet (and transferred some ETH to its account),
-   you can set it as the default account for fund transfers or method invocations by setting
-   a special alias, 'defaultSender', using the following command...
-   ```
-   sbt:eth-command-line> ethAddressAliasSet defaultSender 0xe10280702f233573b2dca5a81bda8dd3a0867fcc
-
-   ```
    ...but using your own Ethereum address of course!
    
 
 ## Introduction
 
-`eth-command-line` is just a thin wrapper around [sbt-ethereum](https://github.com/swaldman/sbt-ethereum).
-For full documentation, please see that project's [README.md](https://github.com/swaldman/sbt-ethereum/blob/master/README.md) file.
+`eth-command-line` is just a thin wrapper around [sbt-ethereum](https://www.sbt-ethereum.io/).
 
-To use [sbt-ethereum](https://github.com/swaldman/sbt-ethereum) directly, you have to go through
+To use _sbt-ethereum_, you have to go through
 the ceremony of setting up a project directory and run a synced ethereum node. This project takes care of that for you.
 
-In order for the instant gratification thing to work, this application is preconfigured to interact with a public
-Ethereum node at `http://ethjsonrpc.mchange.com:8545/` When you are ready to sync the blockchain and run your own node,
-you should probably graduate to using [sbt-ethereum](https://github.com/swaldman/sbt-ethereum) directly. **No guarantees are
-made about how long our Ethereum node will be exposed for public use!** But for now, come play.
+In order for the instant gratification thing to work, _sbt-ethereum_ may be preconfigured to interact with a public
+_ethereum_ node. **No guarantees are
+made about how long this Ethereum node will be exposed for public use!** It's best to [get access to a more reliable
+node, and define that as your default node URL](https://www.sbt-ethereum.io/tutorials/getting-started.html#connect-to-a-node).
 
 ### Quick Example: Import a contract ABI and call a constant method of a smart contract to check its state
 
 ```
-sbt:eth-command-line> ethContractAbiMemorize
-Contract address in hex: 0x57d0dfa84161e565c9f9ba4aab24d6b22654cca1
-Contract ABI: [{"name":"sayHello","inputs":[],"outputs":[{"name":"","type":"string"}],"constant":true,"payable":false,"stateMutability":"view","type":"function"}]
-[info] ABI is now known for the contract at address 5c9a9820d404481000c1d85fb620852e105a1904
+sbt:eth-command-line> ethContractAbiImport
+Contract address in hex: 0x82ea8ab1e836272322f376a5f71d5a34a71688f1
+Contract ABI: [{"outputs":[],"constant":false,"payable":false,"inputs":[{"name":"fortune","type":"string"}],"name":"addFortune","stateMutability":"nonpayable","type":"function"},{"outputs":[{"name":"count","type":"uint256"}],"constant":true,"payable":false,"inputs":[],"name":"countFortunes","stateMutability":"view","type":"function"},{"outputs":[{"name":"fortune","type":"string"}],"constant":true,"payable":false,"inputs":[],"name":"drawFortune","stateMutability":"view","type":"function"},{"outputs":[{"name":"","type":"string"}],"constant":true,"payable":false,"inputs":[{"name":"","type":"uint256"}],"name":"fortunes","stateMutability":"view","type":"function"},{"inputs":[{"name":"author","type":"address","indexed":false},{"name":"fortune","type":"string","indexed":false}],"name":"FortuneAdded","anonymous":false,"type":"event"},{"payable":false,"inputs":[{"name":"initialFortune","type":"string"}],"stateMutability":"nonpayable","type":"constructor"}]
+[info] ABI is now known for the contract at address '0x82ea8ab1e836272322f376a5f71d5a34a71688f1'
 [success] Total time: 37 s, completed Dec 29, 2016 9:33:13 AM
 sbt:eth-command-line> ethTransactionView 0x57d0dfa84161e565c9f9ba4aab24d6b22654cca1 sayHello
 [info] The function 'sayHello' yields 1 result.
@@ -90,20 +82,7 @@ If you try to type everything in, you will find this to be an annoyingly verbose
 command line interface. `eth-command-line` tasks support <tab> completion *extensively*. **When in doubt, just hit <tab>
 a few times in quick succession, and maybe things will get clearer.**
 
-## Links to documentation of common operations
+## RTFM
 
-* [Sending ether](https://github.com/swaldman/sbt-ethereum/blob/master/README.md#sending-ether)
-* [Interacting with deployed smart contracts](https://github.com/swaldman/sbt-ethereum/blob/master/README.md#interacting-with-deployed-smart-contracts)
-* [Generating accounts and wallets](https://github.com/swaldman/sbt-ethereum/blob/master/README.md#generating-accounts-and-wallets)
-* [Managing the sbt-ethereum repository](https://github.com/swaldman/sbt-ethereum/blob/master/README.md#the-sbt-ethereum-repository)
-
-## Developing your own smart contracts
-
-If you are working with `eth-command-line`, you have downloaded a capable environment for developing ethereum smart contracts.
-However, it's best to create a separate project directory for your work. Please see the [sbt-ethereum](https://github.com/swaldman/sbt-ethereum/blob/master/README.md) docs.
-
-**All of your wallets and imported contract ABIs will be available in the new project. They are kept in a central repository by `sbt-ethereum`.**
-
-When you deploy the smart contracts you develop, their ABIs (and other meta information) will be added to the repository database, so you can
-build up a permanent knowledge base about the contracts you work with over time.
+Please just see the [_sbt-ethereum_ docs](https://www.sbt-ethereum.io/).
 
