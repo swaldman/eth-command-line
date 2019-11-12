@@ -1,6 +1,14 @@
 # eth-command-line
 
-### An instant-gratification command line for interacting with ethereum smart-contracts and accounts ###
+**An instant-gratification command line for interacting with ethereum smart-contracts and accounts**
+
+  * [Prerequisites](#prerequisites)
+  * [Quick\-Start](#quick-start)
+  * [Introduction](#introduction)
+    * [Quick Example: Import a contract ABI and call a constant method of a smart contract to check its state](#quick-example-import-a-contract-abi-and-call-a-constant-method-of-a-smart-contract-to-check-its-state)
+  * [Tab completion is your friend\.](#tab-completion-is-your-friend)
+  * [Upgrade / Downgrade](#upgrade--downgrade)
+  * [RTFM](#rtfm)
 
 ## Prerequisites
 
@@ -9,7 +17,7 @@ already have one, you can download a [JRE](http://www.oracle.com/technetwork/jav
 (or a full [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html))
 from Oracle.
 
-`eth-command-line` has been developed under Java 8, but will probably work under other Java versions.
+`eth-command-line` will run [under Java 8 or Java 11](https://www.sbt-ethereum.io/appendix/prerequisites.html#java-8-or-11-runtime).
 
 ## Quick-Start
 
@@ -81,6 +89,18 @@ sbt:eth-command-line> ethTransactionView 0x57d0dfa84161e565c9f9ba4aab24d6b22654c
 If you try to type everything in, you will find this to be an annoyingly verbose
 command line interface. `eth-command-line` tasks support <tab> completion *extensively*. **When in doubt, just hit <tab>
 a few times in quick succession, and maybe things will get clearer.**
+
+## Upgrade / Downgrade
+
+To upgrade (or downgrade) versions of _sbt-ethereum_, just run
+
+```
+$ cd eth-command-line
+$ git fetch
+$ git checkout 0.3.5
+```
+
+(Substitute whatever version you desire for `0.3.5`.)
 
 ## RTFM
 
